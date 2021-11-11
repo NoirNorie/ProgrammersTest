@@ -24,17 +24,3 @@ string solution(vector<string> participant, vector<string> completion)
     answer = participant[completion.size()]; // 마지막 남은 사람이 완주 못한 사람
     return answer;
 }
-
-// 우선순위 큐 해결법
-/*
-    priority_queue<int, vector<int>, greater<int>> pq(scoville.begin(), scoville.end());
-    // 이렇게 벡터를 옮겨버릴 수도 있다.
-
-    while(pq.top()<K) {
-        if(pq.size()==1) return answer = -1;
-        needHot=pq.top(); pq.pop();
-        pq.push(needHot+pq.top()*2);
-        pq.pop(); answer++;
-    }
-
-*/
