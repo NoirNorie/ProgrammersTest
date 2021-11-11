@@ -25,3 +25,19 @@ int solution(vector<int> scoville, int K) {
     }
     return answer;
 }
+
+// 우선순위 큐 해결법
+/*
+#include <queue>
+
+    priority_queue<int, vector<int>, greater<int>> pq(scoville.begin(), scoville.end());
+    // 이렇게 벡터를 옮겨버릴 수도 있다.
+
+    while(pq.top()<K) {
+        if(pq.size()==1) return answer = -1;
+        needHot=pq.top(); pq.pop();
+        pq.push(needHot+pq.top()*2);
+        pq.pop(); answer++;
+    }
+
+*/
