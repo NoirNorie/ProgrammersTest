@@ -10,17 +10,31 @@ string solution(vector<string> participant, vector<string> completion)
     
     sort(participant.begin(), participant.end());
     sort(completion.begin(), completion.end());
-    // µÑ ´Ù Á¤·ÄÇÑ´Ù.
+    // ë‘˜ ë‹¤ ì •ë ¬í•œë‹¤.
     
     for (int i = 0; i < completion.size(); i++)
     {
         if (participant[i] != completion[i])
         {
             return answer = participant[i];
-            // ´Ù¸¥ ÁöÁ¡ÀÌ ³ª¿Â´Ù¸é ±× »ç¶÷ÀÌ ¿ÏÁÖ ¸øÇÑ »ç¶÷
+            // ë‹¤ë¥¸ ì§€ì ì´ ë‚˜ì˜¨ë‹¤ë©´ ê·¸ ì‚¬ëŒì´ ì™„ì£¼ ëª»í•œ ì‚¬ëŒ
         }
     }
-    // ¸¶Áö¸·±îÁö ´Ù µ¿ÀÏÇÏ´Ù¸é
-    answer = participant[completion.size()]; // ¸¶Áö¸· ³²Àº »ç¶÷ÀÌ ¿ÏÁÖ ¸øÇÑ »ç¶÷
+    // ë§ˆì§€ë§‰ê¹Œì§€ ë‹¤ ë™ì¼í•˜ë‹¤ë©´
+    answer = participant[completion.size()]; // ë§ˆì§€ë§‰ ë‚¨ì€ ì‚¬ëŒì´ ì™„ì£¼ ëª»í•œ ì‚¬ëŒ
     return answer;
 }
+
+// ìš°ì„ ìˆœìœ„ í í•´ê²°ë²•
+/*
+    priority_queue<int, vector<int>, greater<int>> pq(scoville.begin(), scoville.end());
+    // ì´ë ‡ê²Œ ë²¡í„°ë¥¼ ì˜®ê²¨ë²„ë¦´ ìˆ˜ë„ ìˆë‹¤.
+
+    while(pq.top()<K) {
+        if(pq.size()==1) return answer = -1;
+        needHot=pq.top(); pq.pop();
+        pq.push(needHot+pq.top()*2);
+        pq.pop(); answer++;
+    }
+
+*/
