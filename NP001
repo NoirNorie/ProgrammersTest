@@ -1,0 +1,77 @@
+#include <vector>
+#include <string>
+#include <sstream>
+using namespace std;
+
+class Person
+{
+	string lang;
+	string role;
+	string career;
+	string soulfood;
+	int score;
+public:
+	Person(string l, string r, string c, string s, int n)
+	{
+		lang = l; role = r; career = c;
+		soulfood = s; score = n;
+	}
+	bool SRCH(string l, string r, string c, string s, int num)
+	{
+		if (l == "-" || lang == l) {
+			if (r == "-" || role == r) {
+				if (c == "-" || career == c) {
+					if (s == "-" || soulfood == s) {
+						if (num == 0 || score >= num) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
+};
+
+vector<int> solution(vector<string> info, vector<string> query) {
+    // 사람 정보
+	vector<Person> iv;
+    // 시험자 파싱
+	string sbf;
+	for (int i = 0; i < info.size(); i++)
+	{
+		vector<string> tmp;
+		istringstream ss(info[i]);
+		while (getline(ss, sbf, ' '))
+		{
+			tmp.push_back(sbf);
+		}
+		Person x(tmp[0], tmp[1], tmp[2], tmp[3], stoi(tmp[4]));
+		iv.push_back(x);
+	}
+    
+    vector<int> answer;
+	string sbf2;
+	for (int i = 0; i < query.size(); i++)
+	{
+		vector<string> tmp;
+		istringstream ss(query[i]);
+		while (getline(ss, sbf2, ' '))
+		{
+			if (sbf2 == "and") continue; // 필요 없는 정보는 버린다.
+			tmp.push_back(sbf2);
+		}
+
+		int cnt = 0;
+		// 이번 쿼리에 대한 사람을 찾아낸다.
+		for (int j = 0; j < iv.size(); j++)
+		{
+			if (iv[j].SRCH(tmp[0], tmp[1], tmp[2], tmp[3], stoi(tmp[4]))) cnt++;
+		}
+		answer.push_back(cnt);
+
+	}
+    
+    
+    return answer;
+}
