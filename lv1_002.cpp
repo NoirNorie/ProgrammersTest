@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 숫자 문자열과 영단어
+
 #include <string>
 #include <vector>
 #include <map>
