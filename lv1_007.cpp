@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 음양 더하기
+
 #include <string>
 #include <vector>
 
