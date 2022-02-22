@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 소수 만들기
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
