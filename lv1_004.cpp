@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 신규 아이디 추천
+
 #include <bits/stdc++.h>
 
 using namespace std;
