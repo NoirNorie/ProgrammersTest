@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 로또의 최고 순위와 최저 순위
+
 #include <string>
 #include <vector>
 #include <set>
