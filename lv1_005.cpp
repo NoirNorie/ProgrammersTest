@@ -1,3 +1,6 @@
+// 프로그래머스 코딩테스트 연습
+// LV1 : 크레인 인형뽑기 게임
+
 #include <string>
 #include <vector>
 #include <stack>
