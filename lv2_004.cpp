@@ -1,5 +1,5 @@
 # 프로그래머스 코딩테스트 연습
-# Level 2: 캐시
+# Level 2: K 진수에서 소수 개수 구하기
 
 #include <string>
 #include <vector>
